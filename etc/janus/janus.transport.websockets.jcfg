@@ -11,8 +11,8 @@ general: {
 	ws_port = 8188					# WebSockets server port
 	#ws_interface = "eth0"			# Whether we should bind this server to a specific interface only
 	#ws_ip = "192.168.0.1"			# Whether we should bind this server to a specific IP address only
-	wss = false						# Whether to enable secure WebSockets
-	#wss_port = 8989				# WebSockets server secure port, if enabled
+	wss = true						# Whether to enable secure WebSockets
+	wss_port = 8989				# WebSockets server secure port, if enabled
 	#wss_interface = "eth0"			# Whether we should bind this server to a specific interface only
 	#wss_ip = "192.168.0.1"			# Whether we should bind this server to a specific IP address only
 	#ws_logging = "err,warn"		# libwebsockets debugging level as a comma separated list of things
@@ -57,8 +57,8 @@ cors: {
 # 'ciphers' property accordingly (no limitation by default).
 # Examples of recommended cipher strings at https://cheatsheetseries.owasp.org/cheatsheets/TLS_Cipher_String_Cheat_Sheet.html
 certificates: {
-	#cert_pem = "/path/to/cert.pem"
-	#cert_key = "/path/to/key.pem"
-	#cert_pwd = "secretpassphrase"
+	cert_pem = "/etc/pki/CA/certs/ca.cert.pem"
+	cert_key = "/etc/pki/CA/private/ca.key.pem"
+	cert_pwd = "8dc4e532-5b1f-43fd-8c66-d69ac2ab876a"
 	#ciphers = "ECDHE-RSA-AES256-GCM-SHA384:ECDHE-RSA-AES128-GCM-SHA256"
 }
