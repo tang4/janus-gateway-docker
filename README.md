@@ -40,6 +40,13 @@ $ docker logs [-f] janus-gateway-docker\_janus-gateway\_1
 Where the optional [-f] follows the log output.
 ```
 
+## Certificates
+It is required that certificates be generated before bulding the image.
+Files named:
+* ca.cert.pem
+* ca.key.pem
+must exist before the build is executed.
+
 ## Authors
 
 This dockerfile is maintained by Canyan.io.
