@@ -17,7 +17,9 @@ services:
       - "7088:7088"
       - "7089:7089"
     volumes:
-      - "./etc/janus/janus.jcfg:/usr/local/etc/janus/janus.jcfg"
-      - "./etc/janus/janus.eventhandler.sampleevh.jcfg:/usr/local/etc/janus/janus.eventhandler.sampleevh.jcfg"
+      - ${PWD}/etc/janus/janus.jcfg:/usr/local/etc/janus/janus.jcfg
+      - ${PWD}/etc/janus/janus.eventhandler.sampleevh.jcfg:/usr/local/etc/janus/janus.eventhandler.sampleevh.jcfg
+      - ${PWD}/ca.key.pem:/etc/pki/CA/private/ca.key.pem
+      - ${PWD}/ca.cert.pem:/etc/pki/CA/certs/ca.cert.pem
     restart: always
     network_mode: "host"
