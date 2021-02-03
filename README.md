@@ -10,45 +10,34 @@ For some online demos and documentations, make sure you pay the [project website
 
 To discuss Janus with us and other users, there's a Google Group called [meetecho-janus](https://groups.google.com/forum/#!forum/meetecho-janus) that you can use. If you encounter bugs, though, please submit an issue on [github](https://github.com/meetecho/janus-gateway/issues) instead.
 
-## Usage
-
-You can use the docker image as follows:
+## Docker Build Image
+You can build the docker image as follows:
 
 ```bash
-$ docker pull canyan/janus-gateway:latest
+$ docker-compose -f docker-compose.yml build
 ```
 
-We provide the following tags:
+## Docker Container Start
+You can start the docker container as follows:
 
-* **latest**: points to the latest stable version
-* **full version number (e.g., 0.10.7)**
-* **major version number (e.g., 0.10)**
-* **master**: daily rebuild of the master branch
+```bash
+$ docker-compose up -d
+```
 
-You can use the docker-image in a docker-compose project including:
+## Docker Container Stop
+You can stop the docker container as follows:
 
-```yaml
-version: '2.1'
-services:
+```bash
+$ docker-compose down
+```
 
-  #
-  # janus-gateway
-  #
-  janus-gateway:
-    image: 'canyan/janus-gateway:0.10.7'
-    command: ["/usr/local/bin/janus", "-F", "/usr/local/etc/janus"]
-    ports:
-      - "8188:8188"
-      - "8088:8088"
-      - "8089:8089"
-      - "8889:8889"
-      - "8000:8000"
-      - "7088:7088"
-      - "7089:7089"
-    volumes:
-      - "./etc/janus/janus.jcfg:/usr/local/etc/janus/janus.jcfg"
-      - "./etc/janus/janus.eventhandler.sampleevh.jcfg:/usr/local/etc/janus/janus.eventhandler.sampleevh.jcfg"
-    restart: always
+## Docker Contailer View Logs
+You can stop the docker container as follows:
+
+```bash
+$ docker logs [-f] janus-gateway-docker\_janus-gateway\_1
+
+Where the optional [-f] follows the log output.
 ```
 
 ## Authors
