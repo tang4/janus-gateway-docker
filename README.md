@@ -10,13 +10,6 @@ For some online demos and documentations, make sure you pay the [project website
 
 To discuss Janus with us and other users, there's a Google Group called [meetecho-janus](https://groups.google.com/forum/#!forum/meetecho-janus) that you can use. If you encounter bugs, though, please submit an issue on [github](https://github.com/meetecho/janus-gateway/issues) instead.
 
-## Docker Build Image
-You can build the docker image as follows:
-
-```bash
-$ docker-compose -f docker-compose.yml build
-```
-
 ## Docker Container Start
 You can start the docker container as follows:
 
@@ -35,7 +28,7 @@ $ docker-compose down
 You can stop the docker container as follows:
 
 ```bash
-$ docker logs [-f] janus-gateway-docker\_janus-gateway\_1
+$ docker logs [-f] janus-gateway-docker_janus-gateway_1
 
 Where the optional [-f] follows the log output.
 ```
