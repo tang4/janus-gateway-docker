@@ -5,8 +5,7 @@ services:
   # janus-gateway
   #
   janus-gateway:
-    build:
-      context: .
+    image: 'docker.vantrix.tv/janus-gateway:0.10.9'
     command: ["/usr/local/bin/janus", "-F", "/usr/local/etc/janus"]
     ports:
       - "8188:8188"
